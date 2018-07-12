@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+  <script >
+    function validPhone(){
+      // if pattern doesn't mache, pos will have -1
+      var pos = $("#phone").val().search(/^\d{3}-\d{3}-\d{4}$/);
+      return (pos != -1);
+    }
+    function validName(){
+      var pos = $("#custName").val().search(/^[A-Z][a-z]+, [A-Z][a-z]+$/);
+      return (pos != -1);
+    }
+
+    $(document).ready(function(){
+      $("#custName").change(function() {
+        if (!validName()) {
+          $("#error").css("color","red");
+          $("#error").html("The name you entered (" + $("#custName").val() + ") is not in the correct form. <br>" +
+              "The correct form is: Last-name, First-name <br>" + "Unfortunately, it is case-sensitive");
+        }
+      });
+      $("#phone").change(function() {
+        if (!validPhone()) {
+          $("#error").css("color","red");
+          $("#error").html("The phone number you entered (" + $("#phone").val() + ") is not in the correct form. <br>" +
+                 "The correct form is: ddd-ddd-dddd <br> Unfortunately, you will need to type dash(-) too");
+        }
+      });
+
+      $("#submit").click(function(){
+        if (validName() && validPhone()) {
+          $("#error").html(" <br> Hooray! Good Job!");
+          $("#error").css("color","green");
+        }
+        else {
+          $("#error").css("color","red");
+          $("#error").html("<br> Fix your inputs.");
+        }
+        console.log("The name entered: " + $("#custName").val() + " and the phone entered: " + $("#phone").val());
+        return validName() && validPhone();
+      });
+    });
+  </script>
+  <title>Form validation example using JQuery</title>
+</head>
+<body>
+  <h1> Form validation Example with JQuery </h1>
+  <form>
+    <input type = "text"  id = "custName" placeholder="Last, First name ">
+    <input type = "text"  id = "phone" placeholder="Phone No. (ddd-ddd-dddd)">
+    <input type = "reset"  id = "reset" >
+    <input type = "button" value="submit" id = "submit" >
+    <br>
+    <div id="error"></div>
+  </form>
+</body>
+</html>

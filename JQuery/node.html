@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+  <script >
+    // jQuery way
+    $(document).ready(function(){
+      var jQueryLink = $("<a href='http://www.bridgew.edu', title='JQuery' > Visit us </a>");
+      // jQuery long verson
+      //var jQueryLink = $("<a></a>");
+      //jQueryLink.attr("href", 'http://www.bridgew.edu');
+      //jQueryLink.attr("title", "JQuery Long version");
+      //jQueryLink.html("Visit us");
+
+      $("#prepend").prepend(jQueryLink);
+      $("#append").append(jQueryLink.clone());
+    });
+  </script>
+  <title>Node Creation</title>
+</head>
+<body>
+  <h2 id="prepend">Bridgewater State University</h2>
+  <h2 id="append">Bridgewater State University</h2>
+  <script>
+    // JavaScript
+    /*
+    function foo(){
+      // Node creation
+      var jsLink = document.createElement("a");
+      jsLink.href = "http://www.bridgew.edu";
+      jsLink.innerHTML = "Visit us";
+      jsLink.title="JavaScript";
+
+      document.getElementById("append").appendChild(jsLink);
+
+      var prepend = document.getElementById("prepend");
+      prepend.insertBefore(jsLink.cloneNode(true),prepend.childNodes[0]);
+    }
+    window.addEventListener('load',foo);
+    */
+  </script>
+</body>
+</html>
