@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <title> AngularJS </title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+</head>
+<body>
+  <!--
+    The ng-model binds the value of the input field to the application variable name.
+    The ng-bind binds the innerHTML of the <h2> element to the application variable name.
+    The ng-init initializes AngularJS application variables.
+    AngularJS expressions are written inside double braces: {{ expression }}
+    AngularJS expressions bind AngularJS data to HTML the same way as the ng-bind directive.
+  -->
+  <div ng-app="" ng-init="person={firstName:'Jane',lastName:'Doe'}">
+    <p>Name : <input type="text" ng-model="person.firstName"></p>
+    <h1>{{person.lastName}}, {{person.firstName}}</h1>
+    <h2 ng-bind="person.firstName"></h2>
+    <h2 ng-bind="person.lastName"></h2>
+    <p>My first expression: {{ 5 + 5 }}</p>
+  </div>
+</body>
+</html>

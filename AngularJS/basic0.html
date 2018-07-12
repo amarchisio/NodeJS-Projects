@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <title> AngularJS </title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+</head>
+<body>
+  <!-- AngularJS starts automatically when the page has loaded
+    AngularJS directives are HTML attributes with an ng prefix
+  -->
+  <div ng-app="">
+    <p>Name : <input type="text" ng-model="name"></p>
+    <h1>{{name}}</h1>
+    <h2 ng-bind="name"></h2>
+  </div>
+</body>
+</html>

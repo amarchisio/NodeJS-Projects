@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<body>
+  <!--
+  A module is created by using the AngularJS function angular.module
+  AngularJS modules define AngularJS applications.
+  The AngularJS application is defined by ng-app="myApp".
+  The application runs inside the <div>.
+  -->
+  <p>Try to change the names.</p>
+  <div ng-app="myApp" ng-controller="myCtrl">
+    First Name: <input type="text" ng-model="firstName"><br>
+    Last Name: <input type="text" ng-model="lastName"><br><br>
+
+    Last Name: <p ng-bind="lastName"></p><br><br>
+    Full Name: <p> {{firstName + " " + lastName}} </p><br>
+  </div>
+  <script>
+    var app = angular.module('myApp', []);
+    app.controller('myCtrl', function($scope) {
+      $scope.firstName= "John";
+      $scope.lastName= "Doe";
+    });
+  </script>
+</body>
+</html>
