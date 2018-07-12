@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>JavaScript Example</title>
+</head>
+<body>
+  <h1> Hello fellow Web programmers! </h1>
+  <h3 id="h3Tag"> Are you working on your home page?</h3>
+  <button type="button" onclick="foo()">Click me</button>
+  <script >
+    function foo(){
+      // Change the inner HTML of an element
+      document.getElementsByTagName("h1")[0].innerHTML="I'm looking forward to seeing your home page!";
+      // option 1
+      document.getElementsByTagName("h3")[0].innerHTML="http://seikyung.com/";
+      document.getElementsByTagName("h3")[0].style.color="blue"; // Change the style of an HTML element
+
+      // option 2
+      //var second = document.getElementById("h3Tag");
+      //second.innerHTML="http://seikyung.com/";
+      //second.style.color="blue"; // element.style.property = new style
+
+      // option 3
+      /*
+      var second = document.getElementById("h3Tag");
+      second.removeChild(second.firstChild); // Remove an HTML element
+      second.appendChild(document.createTextNode("http://seikyung.com/")); // Add an HTML element
+      second.style.color="blue";
+      */
+    }
+  </script>
+</body>
+</html>

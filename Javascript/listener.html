@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>JavaScript Example</title>
+</head>
+<body>
+  <h1> Listener Example </h1>
+  <!-- newer DOM2 style -->
+  <button id="button" type="button">Click me</button>
+  <p  id="dateLocation"> </p>
+
+  <!-- older style
+  <button id="button" type="button" onclick="foo()">Click me</button>-->
+
+  <script >
+    document.getElementById("button").addEventListener('click',foo);
+    document.getElementById("button").addEventListener('mouseover',baz);
+
+    function foo(){
+      var d = new Date();
+      document.getElementById("dateLocation").innerHTML += d.toString() + "<br>";
+    }
+    function baz(){
+      document.getElementById("dateLocation").innerHTML += "mouse over <br>";
+    }
+  </script>
+</body>
+</html>
