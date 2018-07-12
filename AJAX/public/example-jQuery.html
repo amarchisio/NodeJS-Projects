@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $("button").click(function(){
+        // jQuery load() is the event handler for receiving a response from the server
+        // the function is the callback function. In this example, it is anonymous
+        // The load() method loads data from a server and puts the returned data into the selected element
+        $("#demo").load("ajax_info.txt", function(responseText, statusText, xhttp){
+          // xhttp is jQuery object, so will need to convert to string format
+          console.log(JSON.stringify(xhttp));
+          //console.log(xhttp);
+          if(statusText == "success"){
+            console.log("External content loaded successfully!");
+          }
+          else {
+            console.log("Error: " + xhttp.readyState + ": " + xhttp.status + ": " + xhttp.statusText);
+          }
+        });
+      });
+    });
+  </script>
+<title>AJAX example with jQuery</title>
+</head>
+<body>
+  <h2><div id="demo">Let jQuery AJAX change this text</div></h2>
+  <button type="button">Change Content</button>
+</body>
+</html>

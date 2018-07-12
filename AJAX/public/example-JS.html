@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>AJAX Example</title>
+</head>
+<body>
+  <h2><div id="demo">Let AJAX change this text</div></h2>
+  <button id="button" type="button" >Change Content</button>
+  <script>
+    function loadDoc() {
+      // The XMLHttpRequest object is used to exchange data with a server behind the scenes.
+      var xhttp = new XMLHttpRequest();
+      // javascript load and error are events
+      xhttp.addEventListener("load",success); // when we successfully execute .send()
+      xhttp.addEventListener("error",error);  // when we failed execute .send()
+
+      xhttp.open("GET", "ajax_info.txt", true);
+      xhttp.send();
+      // inner function. You can take this outside
+      function success(){
+        document.getElementById("demo").innerHTML = xhttp.response;
+      }
+      function error(){
+        console.log(xhttp.readyState);
+        console.log(xhttp.status);
+      }
+    }
+    document.getElementById("button").addEventListener('click',loadDoc);
+</script>
+</body>
+</html>

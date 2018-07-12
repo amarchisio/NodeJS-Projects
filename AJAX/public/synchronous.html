@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Synchronous file upload example</title>
+</head>
+<body>
+  <!-- reference: https://www.w3schools.com/tags/att_form_enctype.asp -->
+  <!-- enctype: encoding type -->
+  <!-- default form encoding type is urlencoded (all caracters are encoded before sent) -->
+  <!-- multipart/form-data: should use this for file uploading -->
+  <form enctype="multipart/form-data" method="post" action="http://localhost:3000/upload">
+    <!-- input type "file" allows to browse files to upload -->
+    <input type="file" name="file_up">
+    <input type="submit">
+  </form>
+</body>
+</html>
