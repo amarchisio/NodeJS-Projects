@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<body>
+  <!--
+  A module is created by using the AngularJS function angular.module
+  AngularJS modules define AngularJS applications.
+  The AngularJS application is defined by ng-app="myApp".
+  The application runs inside the <div>.
+  -->
+  <p>Try to change the names.</p>
+  <div ng-app="myApp" ng-controller="myCtrl">
+    Articles of Clothing: <input type="text" ng-model="articlesOfClothing"><br><br>
+    Female Person You Know #1: <input type="text" ng-model="female1"><br><br>
+    Female Person You Know #2: <input type="text" ng-model="female2"><br><br>
+    Male Person You Know #1: <input type="text" ng-model="male1"><br><br>
+    Male Person You Know #2: <input type="text" ng-model="male2"><br><br>
+    Plural Noun: <input type="text" ng-model="noun"><br><br>
+
+    Mad Lib: <p> <strong>{{articlesOfClothing}} </strong></p><br>
+  </div>
+  <script>
+    var app = angular.module('myApp', []);
+    app.controller('myCtrl', function($scope) {
+      $scope.articlesOfClothing= "John";
+      $scope.female1= "Jane";
+      $scope.female2= "Jenna";
+      $scope.male1= "Brett";
+      $scope.male2= "Chris";
+      $scope.noun= "Socks";
+    });
+  </script>
+</body>
+</html>

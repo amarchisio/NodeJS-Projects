@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html>
+<div	ng-app="myApp"	ng-controller="myCtrl">
+		<form>
+				<label>	Enter	a	title	</label><br>
+				<input	type="text"	ng-model="example.title"
+				placeholder="Enter	a	title"><br>
+				<label>	Enter	a	paragraph</label>	<br>
+				<textarea ng-model="example.paragraph"
+				col="80"	rows="10"></textarea>	<br>
+				<input	type="button"	ng-click="submit()"
+				value="Post	something">
+		</form>
+		<div	ng-show="fromServer">
+				<p>	<strong>	Title	is	</strong>	{{titleFromServer}}	</p>
+				<p><strong>	paragraph	is	</strong>	{{paragraphFromServer}}</p>
+		</div>
+</div>
+</html>
